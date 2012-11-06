@@ -7,6 +7,9 @@ public class RentalCar extends Car {
 	@NotNull
 	private String rentalStation;
 	
+	@NotNull
+	private String manufacturer;
+	
 	public RentalCar(String manufacturer, boolean isRegistered) {
 		super(manufacturer, isRegistered);
 	}

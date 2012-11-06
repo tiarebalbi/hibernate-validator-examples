@@ -1,6 +1,6 @@
 package br.com.validator.model.test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.util.Set;
 
@@ -12,10 +12,9 @@ import javax.validation.ValidatorFactory;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import br.com.validator.model.Car;
-import br.com.validator.model.RentalCar;
+import br.com.validator.model.Department;
 
-public class RentalCarTest {
+public class DepartmentTest {
 
 	private static Validator validator;
 
@@ -26,12 +25,11 @@ public class RentalCarTest {
 	}
 	
 	@Test
-	public void rentalStationIsNull() throws Exception {
-		Car rentalCar = new RentalCar("Morris", true);
+	public void departmentIsNull() throws Exception {
+		Department department = new Department(null);
 		
-		Set<ConstraintViolation<Car>> constraintViolations = validator.validate(rentalCar);
+		Set<ConstraintViolation<Department>> constraintViolations = validator.validate(department);
 		
-		assertEquals(5, constraintViolations.size());
+		assertEquals(1, constraintViolations.size());
 	}
-	
 }
