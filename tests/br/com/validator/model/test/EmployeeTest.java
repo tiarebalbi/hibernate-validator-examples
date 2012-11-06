@@ -37,7 +37,7 @@ public class EmployeeTest {
 
 	@Test
 	public void employeeWithDepartmentNull() throws Exception {
-		Department department = new Department(null);
+		Department department = new Department("IT");
 		Employee employee = new Employee("John", department);
 		
 		Set<ConstraintViolation<Employee>> constraintViolations = validator.validate(employee);
